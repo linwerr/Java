@@ -5,14 +5,58 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args) {
-        //maxString();
-        //arrayMerge();
-        //maxSum();
-        //rotateMatrix();
-        //findPair();
-        //sumOfElements();
-        //maxInRows();
-        rotateMatrix2();
+        Scanner scanner = new Scanner(System.in);
+        int choice;
+
+        do {
+            System.out.println("Выберите задание:");
+            System.out.println("1. Наибольшая подстрока без повторяющихся символов");
+            System.out.println("2. Слияние двух отсортированных массивов");
+            System.out.println("3. Максимальная сумма подмассива");
+            System.out.println("4. Поворот матрицы на 90 градусов по часовой стрелке");
+            System.out.println("5. Поиск пары с заданной суммой");
+            System.out.println("6. Сумма всех элементов матрицы");
+            System.out.println("7. Максимальные элементы в каждой строке");
+            System.out.println("8. Поворот матрицы на 90 градусов против часовой стрелки");
+            System.out.println("0. Выход");
+            System.out.print("Введите номер задания: ");
+            choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    maxString();
+                    break;
+                case 2:
+                    arrayMerge();
+                    break;
+                case 3:
+                    maxSum();
+                    break;
+                case 4:
+                    rotateMatrix();
+                    break;
+                case 5:
+                    findPair();
+                    break;
+                case 6:
+                    sumOfElements();
+                    break;
+                case 7:
+                    maxInRows();
+                    break;
+                case 8:
+                    rotateMatrix2();
+                    break;
+                case 0:
+                    System.out.println("Выход из программы.");
+                    break;
+                default:
+                    System.out.println("Некорректный ввод");
+            }
+
+        } while (choice != 0);
+
+        scanner.close();
     }
 
 
@@ -222,7 +266,6 @@ public class Main {
             }
         }
         System.out.println("Сумма всех элементов в массиве: " + sum);
-        scanner.close();
     }
 
 
@@ -258,9 +301,8 @@ public class Main {
 
         System.out.println("Максимальные элементы в каждой строке:");
         for (int max : maxValues) {
-            System.out.print(max + " ");
+            System.out.println(max + " ");
         }
-        scanner.close();
     }
 
 
@@ -298,6 +340,5 @@ public class Main {
             }
             System.out.println();
         }
-        scanner.close();
     }
 }
